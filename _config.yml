@@ -29,7 +29,7 @@ twitter_username: downeg2
 github_username:  downeg
 
 # Build settings
-theme: minima
+theme: jekyll-theme-midnight
 plugins:
   - jekyll-feed
   
