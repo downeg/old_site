@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>downeg</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="content-wrap">
+            <header>
+                <h1> downeg </h1>
+                <nav class="nav-main">
+                    <ul>
+                        <li><a href="#">wargames</a></li>
+                        <li><a href="#">cyber</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <nav class="nav-wg">
+                <ul>
+                    <li class="nav-wg-list">
+                        <a href="#">
+                            <span class="icon">
+                                <img class="icon" src="images/chaos_icon.png">
+                            </span>
+                            <span class="text">Black Legion</span>
+                        </a>
+                    </li>
+                    <li class="nav-wg-list">
+                        <a href="#">
+                            <span class="icon">
+                                <img class="icon" src="images/necron_icon.png">
+                            </span>
+                            <span class="text">Necrons</span>
+                        </a>
+                    </li>
+                    <li class="nav-wg-list">
+                        <a href="#">
+                            <span class="icon">
+                                <img class="icon" src="images/orks_icon.png">
+                            </span>
+                            <span class="text">Orks</span>
+                        </a>
+                    </li>
+                    <li class="nav-wg-list">
+                        <a href="#">
+                            <span class="icon">
+                                <img class="icon" src="images/tyranid_icon.png">
+                            </span>
+                            <span class="text">Tyranids</span>
+                    </a>
+                    </li>
+                    <li class="nav-wg-list">
+                        <a href="#">
+                            <span class="icon">
+                                <img class="icon" src="images/ad_mec_icon.jpg">
+                            </span>
+                            <span class="text">Adeptus Mechanicus</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <script>
+            //Enumerate the nav-wg-list items
+            const wg_list = document.querySelectorAll('.nav-wg-list');
+            // Function to change the CSS style of a nav-wg-list icon item that has been clicked
+            function activeIcon() {
+                wg_list.forEach((item) => item.classList.remove('active'));
+                this.classList.add('active');
+            }
+            //Add eventListener to each item in nav-wg-list icon list
+            wg_list.forEach((item) => item.addEventListener('click',activeIcon))
+        </script>
+    </body>
+</html>

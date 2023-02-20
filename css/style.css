@@ -1,0 +1,140 @@
+/* Load a Google font */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+/* Set defaults for element sizing and page font */
+*
+{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: 'Courier Prime', Courier, monospace;  /* Use Google font, or browser defaults if Google font is not available */
+}
+
+*, *:before *:after{
+   box-sizing: inherit;
+}
+
+/* Set up global variables
+   Set preferred values for site colours*/
+:root {
+   --black: rgb(0, 0, 0);
+   --white: rgb(255,255,255);
+   --red: rgb(255,0,0);
+   --green: rgb(0,255,0);
+   --blue: rgb(0, 0, 255);
+}
+
+/* Setup body look and feel */
+body {
+   display: flex;
+   background-color: var(--black);
+}
+
+/* Setup page look and feel */
+.content-wrap {
+   align-items: flex-start;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: left;
+   min-height: 100vh;
+   padding: 30px 10px;
+   width: 80%;
+   margin: 0 auto;
+   background: linear-gradient(var(--blue),var(--green));
+}
+
+/* Page name and main navigation bar positioning */
+header {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 10px 30px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+/* Main navigation bar */
+.nav-main {
+   color: var(--black);
+}
+
+.nav-main ul {
+   display: flex;
+}
+
+.nav-main li {
+   list-style: none;
+}
+
+.nav-main li a {
+   position: relative;
+   color: var(--black);
+   margin: 10px;
+   text-decoration: none;
+   transition: 2s;     /* Time taken to change text colour */
+}
+
+.nav-main li a:hover {
+   color: var(--white);
+}
+
+/* Wargames page navigation bar */
+.nav-wg {
+   width: 100px;
+   height: 350px;
+   padding-left: 20px;
+   padding-right: 50px;
+   padding-top: 70px;
+}
+
+.nav-wg ul {
+   display: flex;
+   flex-direction: column;
+   width: 350px;
+   list-style: none;
+}
+
+.nav-wg ul li {
+   width: 70px;
+   height: 70px;
+   z-index: 1;    /* Bring list items to front */
+}
+
+.nav-wg ul li a {
+   display: flex;
+   flex-direction: column;
+}
+
+.nav-wg ul li a .icon {
+   transition: 0.5s;            /* Time taken to move icon on X axis */
+   border-radius: 50%;
+   width: 50px;
+   height: 50px;
+}
+
+.nav-wg ul li a:hover .icon {
+   border-radius: 30%;
+}
+
+.nav-wg ul li.active a .icon {
+   border-radius: 30%;
+   transform: translateX(-30px)    /* Move icon left on X axis */
+}
+
+.nav-wg ul li a .text {
+   position: absolute;
+   padding-top: 10px;
+   font-weight: 600;
+   width: 30px;
+   transition: 0.5s;     /* Time taken to move text on X axis and make text visible */
+   opacity: 0;           /* Make text invisible */
+   color: var(--white);
+}
+
+.nav-wg ul li.active a .text {
+   opacity: 1;           /* Make text visible */
+   transform: translateX(10px);    /* Move text right on X axis */
+}
