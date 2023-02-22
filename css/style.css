@@ -117,6 +117,7 @@ header {
 
 .nav-wg ul li a:hover .icon {
    border-radius: 30%;
+   transform: translateX(-30px)    /* Move icon left on X axis */
 }
 
 .nav-wg ul li.active a .icon {
@@ -132,6 +133,11 @@ header {
    transition: 0.5s;     /* Time taken to move text on X axis and make text visible */
    opacity: 0;           /* Make text invisible */
    color: var(--white);
+}
+
+.nav-wg ul li:hover a .text {
+   opacity: 1;           /* Make text visible */
+   transform: translateX(10px);    /* Move text right on X axis */
 }
 
 .nav-wg ul li.active a .text {

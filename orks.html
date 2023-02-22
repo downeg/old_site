@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>downeg</title>
         <link rel="stylesheet" href="css/style.css" />
-        <script src="js/script.js" defer></script>
     </head>
     <body>
         <div class="content-wrap">
@@ -21,40 +20,40 @@
 
             <nav class="nav-wg">
                 <ul>
-                    <li class="nav-wg-list" id="chaos">
-                        <a href="#">
+                    <li class="nav-wg-list">
+                        <a href="blackLegion.html">
                             <span class="icon">
                                 <img class="icon" src="images/chaos_icon.png">
                             </span>
                             <span class="text">Black Legion</span>
                         </a>
                     </li>
-                    <li class="nav-wg-list" id="necrons">
-                        <a href="#">
+                    <li class="nav-wg-list">
+                        <a href="necrons.html">
                             <span class="icon">
                                 <img class="icon" src="images/necron_icon.png">
                             </span>
                             <span class="text">Necrons</span>
                         </a>
                     </li>
-                    <li class="nav-wg-list" id="orks">
-                        <a href="#">
+                    <li class="nav-wg-list active">
+                        <a href="orks.html">
                             <span class="icon">
                                 <img class="icon" src="images/orks_icon.png">
                             </span>
                             <span class="text">Orks</span>
                         </a>
                     </li>
-                    <li class="nav-wg-list" id="tyranid">
-                        <a href="#">
+                    <li class="nav-wg-list">
+                        <a href="tyranids.html">
                             <span class="icon">
                                 <img class="icon" src="images/tyranid_icon.png">
                             </span>
                             <span class="text">Tyranids</span>
                     </a>
                     </li>
-                    <li class="nav-wg-list" id="admec">
-                        <a href="#">
+                    <li class="nav-wg-list">
+                        <a href="admec.html">
                             <span class="icon">
                                 <img class="icon" src="images/ad_mec_icon.jpg">
                             </span>
@@ -63,7 +62,22 @@
                     </li>
                 </ul>
             </nav>
-            <p class="mainWindow"></p>
+            <div>
+                <section>
+                    <p> The Orks.</p>
+                </section>
+            </div>
         </div>
+        <script>
+            //Enumerate the nav-wg-list items
+            const wg_list = document.querySelectorAll('.nav-wg-list');
+            // Function to change the CSS style of a nav-wg-list icon item that has been clicked
+            function activeIcon() {
+                wg_list.forEach((item) => item.classList.remove('active'));
+                this.classList.add('active');
+            }
+            //Add eventListener to each item in nav-wg-list icon list
+            wg_list.forEach((item) => item.addEventListener('click',activeIcon))
+        </script>
     </body>
 </html>
